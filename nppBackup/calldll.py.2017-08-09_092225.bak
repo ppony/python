@@ -1,0 +1,7 @@
+
+import ctypes
+
+
+hllDll = ctypes.WinDLL (r"FlashInfo.dll")
+
+

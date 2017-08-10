@@ -3,19 +3,24 @@ Ensure a class only has one instance, and provide a global point of
 access to it.
 """
 from icp import *
-from isp import * 
+from isp import *
 import logging
 
+
 class boger:
-    i=9
+    i = 9
+
     def __init__(self):
-        self.i=8
+        self.i = 8
+
 
 class Terry(boger):
+
     def __init__(self):
         self.i = 10
         print(super())
         print("terry")
+
 
 class Singleton(type):
     """
@@ -40,8 +45,9 @@ class Singleton(type):
             cls._instance = super().__call__(*args, **kwargs)
         return cls._instance
 
-#class Programmer:
+
 class Programmer(metaclass=Singleton):
+
     def __init__(self, strategy):
         _icp = ICP()
         _isp = ISP()
@@ -54,11 +60,12 @@ class Programmer(metaclass=Singleton):
 
         print("init programmer only once")
         print(strategy)
+
     def connect(self):
         self._strategy.connect_func()
 
     def start(self):
-        #self._strategy.erase_func()
+        # self._strategy.erase_func()
         self._strategy.prog_func()
 
     def set_strategy(self, strategy):
@@ -75,17 +82,17 @@ def main():
     #m2 = MyClass()
     #assert m1 is m2
     print(t.__class__)
-#print(type(1))
-#print(type("ss"))
-#print(type({1,}))
-#print(Terry)
-#print(type(Terry))
-#print(Terry.__class__)
-#print(Singleton)
-#print(type(Singleton))
-#print("------------")
-#print(type)
-#print(super(MyClass))
+# print(type(1))
+# print(type("ss"))
+# print(type({1,}))
+# print(Terry)
+# print(type(Terry))
+# print(Terry.__class__)
+# print(Singleton)
+# print(type(Singleton))
+# print("------------")
+# print(type)
+# print(super(MyClass))
 
 
 if __name__ == "__main__":

@@ -28,13 +28,17 @@ class ICP(Strategy):
 		print('icp prog')
 """
 
+
 class ISP(Strategy):
-	def erase_func(self):
-		print('isp erase')
-	def prog_func(self):
-		print('isp prog')
-	def connect_func(self):
-		print('isp connect')
+
+    def erase_func(self):
+        print('isp erase')
+
+    def prog_func(self):
+        print('isp prog')
+
+    def connect_func(self):
+        print('isp connect')
 
 """
 if __name__=="__main__":
